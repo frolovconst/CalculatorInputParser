@@ -13,7 +13,9 @@ public class Parser {
     }
 
     public Expression Parse(){
-        return ParseLogical();
+        Expression result;
+        result = ParseLogical();
+        return result;
     }
 
     private Expression ParseLogical(){
@@ -23,7 +25,7 @@ public class Parser {
             Logical.OpCode oprt = ParseLogicalOp();
             if(oprt != Logical.OpCode.none){
                 Expression right = ParseRelation();
-                result = new Relation(result, oprt, right);
+                result = new Logical(result, oprt, right);
                 continue;
             }
             else {
@@ -90,6 +92,7 @@ public class Parser {
         if ( Character.isDigit(seeNextChar()) )
             result = ParseInteger();
         else if ( seeNextChar() == '(' ) {
+            nextChar();
             result = Parse();
             skipNextChar(); // skip ‘)’
         }
@@ -247,24 +250,17 @@ public class Parser {
                 nextChar();
                 nextChar();
                 return Logical.OpCode.or;
-            } else if(seeNextChar() == '!') {
-                if (seeFollowingChar() == '=') {
-                    nextChar();
-                    nextChar();
-                    return Relation.OpCode.notEq;
-                }
-                else
-                    return Relation.OpCode.none;
-            }
-            else if(seeNextChar() == '='){
+            } else if(seeNextChar() == 'x') {
                 nextChar();
-                return Relation.OpCode.eq;
+                nextChar();
+                nextChar();
+                return Logical.OpCode.xor;
             }
             else
-                return Relation.OpCode.none;
+                return Logical.OpCode.none;
         }
         else
-            return Relation.OpCode.none;
+            return Logical.OpCode.none;
 
     }
 }
