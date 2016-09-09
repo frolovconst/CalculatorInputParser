@@ -1,3 +1,5 @@
+package k.frolov;
+
 import java.util.Scanner;
 
 public class Main {
