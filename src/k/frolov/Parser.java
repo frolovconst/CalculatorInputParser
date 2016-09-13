@@ -128,7 +128,7 @@ public class Parser {
         return result;
     }
 
-    public Character nextChar(){
+    private Character nextChar(){
         try {
             Character bfrChar = input.charAt(0);
             input = input.substring(1);
@@ -139,7 +139,7 @@ public class Parser {
         }
     }
 
-    public Character seeNextChar(){
+    private Character seeNextChar(){
         try {
             return input.charAt(0);
         }
@@ -148,7 +148,7 @@ public class Parser {
         }
     }
 
-    public Character seeFollowingChar(){
+    private Character seeFollowingChar(){
         try {
             return input.charAt(1);
         }
@@ -157,7 +157,7 @@ public class Parser {
         }
     }
 
-    public void skipNextChar(){
+    private void skipNextChar(){
         try {
             input = input.substring(1);
         }
@@ -263,4 +263,6 @@ public class Parser {
             return Logical.OpCode.none;
 
     }
+
+
 }
