@@ -10,6 +10,9 @@ public class Main {
         String input = sc.nextLine();
         Parser testParser = new Parser(input);
         Expression expressionTree = testParser.Parse();
+        long result = expressionTree.Calculate();
+        System.out.println(result);
+
 //        Character bfrChar = testParser.nextChar();
 //        while(bfrChar != null) {
 //            System.out.println(bfrChar);

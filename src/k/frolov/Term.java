@@ -14,6 +14,22 @@ public class Term extends Expression{
         this.rightPrmr = rightPrmr;
     }
 
+    @Override
+    public long Calculate() {
+        long right = rightPrmr.Calculate();
+        long left = leftPrmr.Calculate();
+        switch (oprt) {
+            case add:
+                return left + right;
+            case sub:
+                return left - right;
+            case none:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
 //    private OpCode ParseTerOp(){
 //        if(Parser.seeNextChar() != null) {
 //            if (Parser.seeNextChar() == '-') {

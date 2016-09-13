@@ -5,4 +5,10 @@ package k.frolov;
  */
 public class Parenthesized extends Primary {
     private Expression expression;
+
+    @Override
+    public long Calculate(){
+        return expression.Calculate();
+    }
+
 }

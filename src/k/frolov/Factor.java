@@ -14,5 +14,22 @@ public class Factor extends Expression {
         this.rightPrmr = rightPrmr;
     }
 
+    @Override
+    public long Calculate() {
+        long right = rightPrmr.Calculate();
+        long left = leftPrmr.Calculate();
+        switch (oprt) {
+            case mult:
+                return left * right;
+            case div:
+                return left / right;
+            case none:
+                return 0;
+            default: {
+                return 0;
+            }
+        }
+    }
+
 
 }

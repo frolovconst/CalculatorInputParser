@@ -13,4 +13,9 @@ public class myInteger extends Primary {
     public long getValue() {
         return value;
     }
+
+    @Override
+    public long Calculate(){
+        return value;
+    }
 }
