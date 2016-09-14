@@ -31,5 +31,17 @@ public class Factor extends Expression {
         }
     }
 
+    @Override public String ToJSON(){
+        switch (oprt) {
+            case mult:
+                return "\r\n{ * : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case div:
+                return "\r\n{ / : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case none:
+                return "";
+            default:
+                return "";
+        }    }
+
 
 }

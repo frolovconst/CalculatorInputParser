@@ -11,4 +11,8 @@ public class Parenthesized extends Primary {
         return expression.Calculate();
     }
 
+    @Override public String ToJSON(){
+        return expression.ToJSON();
+    }
+
 }

@@ -5,5 +5,6 @@ package k.frolov;
  */
 public abstract class Expression {
     abstract long Calculate();
+    abstract String ToJSON();
 }
 

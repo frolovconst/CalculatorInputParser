@@ -18,4 +18,8 @@ public class myInteger extends Primary {
     public long Calculate(){
         return value;
     }
+
+    @Override public String ToJSON(){
+        return "" + value;
+    }
 }

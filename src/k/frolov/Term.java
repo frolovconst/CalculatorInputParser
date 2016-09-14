@@ -30,6 +30,22 @@ public class Term extends Expression{
         }
     }
 
+    @Override public String ToJSON(){
+        switch (oprt) {
+            case add:
+                return "\r\n{ + : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case sub:
+                return "\r\n{ - : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case none:
+                return "";
+            default:
+                return "";
+        }
+
+
+    }
+
+    //         Do not use
 //    private OpCode ParseTerOp(){
 //        if(Parser.seeNextChar() != null) {
 //            if (Parser.seeNextChar() == '-') {

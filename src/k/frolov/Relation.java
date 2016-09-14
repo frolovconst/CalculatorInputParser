@@ -50,4 +50,25 @@ public class Relation extends Expression{
         }
     }
 
+    @Override public String ToJSON(){
+        switch (oprt) {
+            case less:
+                return "\r\n{ < : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case lessREq:
+                return "\r\n{ <= : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case grtr:
+                return "\r\n{ > : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case grtrREq:
+                return "\r\n{ >= : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case eq:
+                return "\r\n{ = : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case notEq:
+                return "\r\n{ /= : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case none:
+                return "";
+            default:
+                return "";
+        }
+    }
+
 }

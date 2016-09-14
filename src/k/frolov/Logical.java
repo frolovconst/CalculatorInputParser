@@ -32,5 +32,20 @@ public class Logical extends Expression{
         }
     }
 
+    @Override public String ToJSON(){
+        switch (oprt) {
+            case and:
+                return "\r\n{ and : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case or:
+                return "\r\n{ or : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case xor:
+                return "\r\n{ xor : {\r\nleft : " + leftPrmr.ToJSON() + "\r\nright : " + rightPrmr.ToJSON() + "\r\n}\r\n}";
+            case none:
+                return "";
+            default:
+                return "";
+        }
+    }
+
 
 }
