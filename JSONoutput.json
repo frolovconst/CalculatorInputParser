@@ -1,0 +1,25 @@
+{ and : {
+left : 
+{ < : {
+left : 
+{ + : {
+left : 5
+right : 5
+}
+}
+right : 
+{ + : {
+left : 6
+right : 5
+}
+}
+}
+}
+right : 
+{ > : {
+left : 1
+right : 2
+}
+}
+}
+}
